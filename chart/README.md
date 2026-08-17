@@ -1,6 +1,6 @@
 # Flycast Helm Chart
 
-[![Version: 1.0.1](https://img.shields.io/badge/Version-1.0.1-informational?style=flat-square)](https://github.com/HenriqZimer/flycast-helm-chart)
+[![Version: 1.0.2](https://img.shields.io/badge/Version-1.0.2-informational?style=flat-square)](https://github.com/HenriqZimer/flycast-helm-chart)
 [![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)](https://docs.linuxserver.io/images/docker-flycast/)
 
 A Helm chart for [Flycast](https://docs.linuxserver.io/images/docker-flycast/) - the linuxserver.io
@@ -46,7 +46,7 @@ git clone https://github.com/HenriqZimer/flycast-helm-chart.git
 cd flycast-helm-chart
 
 helm package chart/
-helm install flycast ./flycast-1.0.1.tgz
+helm install flycast ./flycast-1.0.2.tgz
 ```
 
 ## Configuration
