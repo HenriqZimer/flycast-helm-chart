@@ -4,6 +4,67 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: added
+          description: values.schema.json - validates values.yaml against a JSON Schema, and is what powers the "Values schema" feature/badge on ArtifactHub (previously absent)
+      artifacthub.io/changesHistory: |
+        - version: 1.0.1
+          changes:
+            - kind: added
+              description: icon, previously missing entirely - pointed at linuxserver.io's own logo image for this app, which is why no image was ever showing on ArtifactHub
+        - version: 1.0.0
+          changes:
+            - kind: added
+              description: Initial release of the Flycast Helm chart
+            - kind: added
+              description: GPU passthrough for both Intel/AMD (VA-API via /dev/dri) and NVIDIA (via the NVIDIA Kubernetes device plugin, gpu.vendor=nvidia)
+            - kind: added
+              description: seccompUnconfined and a 2Gi default shmSize, both carried over from this chart's sibling pcsx2-helm-chart after PCSX2's JIT recompiler was found to crash with SIGBUS under Docker/Kubernetes' default seccomp/shm limits - not independently confirmed on Flycast, but the same base image/toolchain makes it a likely fix if you hit the same crash
+            - kind: added
+              description: streaming.enabled/streaming.brokerPort in values.yaml, kept only so the chart's shape matches its siblings. WARNING - no RomM broker mod exists for Flycast at all (github.com/LoneAngelFayt/flycast-romm-integration is an empty placeholder, not even a "dev" tag) - there is nothing to enable yet
+      artifacthub.io/license: MIT
+      artifacthub.io/links: |
+        - name: Helm Repository
+          url: https://henriqzimer.github.io/flycast-helm-chart/
+        - name: Chart Source
+          url: https://github.com/HenriqZimer/flycast-helm-chart
+        - name: Maintainer Website
+          url: https://henriqzimer.com.br
+        - name: GitHub Profile
+          url: https://github.com/HenriqZimer
+        - name: linuxserver.io Flycast Image
+          url: https://docs.linuxserver.io/images/docker-flycast/
+        - name: Documentation
+          url: https://github.com/HenriqZimer/flycast-helm-chart/blob/main/chart/README.md
+    apiVersion: v2
+    appVersion: latest
+    created: "2026-08-17T02:16:28.712510313Z"
+    description: A Helm chart for Flycast - the linuxserver.io Dreamcast/Naomi emulator
+      KasmVNC webtop image
+    digest: 6966355ae5cd4f025a4be34018f0c51279df9e22e727cc83f3b670ee3ad27294
+    home: https://docs.linuxserver.io/images/docker-flycast/
+    icon: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/flycast-logo.png
+    keywords:
+    - flycast
+    - emulator
+    - dreamcast
+    - naomi
+    - retrogaming
+    - kasmvnc
+    - linuxserver
+    maintainers:
+    - email: henrique.zimermann@outlook.com
+      name: HenriqZimer
+      url: https://henriqzimer.com.br
+    name: flycast
+    sources:
+    - https://github.com/linuxserver/docker-flycast
+    - https://github.com/HenriqZimer/flycast-helm-chart
+    type: application
+    urls:
+    - https://henriqzimer.github.io/flycast-helm-chart/flycast-1.0.2.tgz
+    version: 1.0.2
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: added
           description: icon, previously missing entirely - pointed at linuxserver.io's own logo image for this app, which is why no image was ever showing on ArtifactHub
       artifacthub.io/changesHistory: |
         - version: 1.0.0
@@ -32,7 +93,7 @@ entries:
           url: https://github.com/HenriqZimer/flycast-helm-chart/blob/main/chart/README.md
     apiVersion: v2
     appVersion: latest
-    created: "2026-08-17T01:48:41.592798974Z"
+    created: "2026-08-17T02:16:28.711238593Z"
     description: A Helm chart for Flycast - the linuxserver.io Dreamcast/Naomi emulator
       KasmVNC webtop image
     digest: e3c45cbfe40f05f37af03feb226b79737ff4d925599719cec79ead494fb91f14
@@ -84,7 +145,7 @@ entries:
           url: https://github.com/HenriqZimer/flycast-helm-chart/blob/main/chart/README.md
     apiVersion: v2
     appVersion: latest
-    created: "2026-08-17T01:48:41.591275745Z"
+    created: "2026-08-17T02:16:28.710095518Z"
     description: A Helm chart for Flycast - the linuxserver.io Dreamcast/Naomi emulator
       KasmVNC webtop image
     digest: 284485ed3a2ffbfca8b2e1f6eb865f83a75cae4d99d00db1a2ac66454a3ff2a1
@@ -109,4 +170,4 @@ entries:
     urls:
     - https://henriqzimer.github.io/flycast-helm-chart/flycast-1.0.0.tgz
     version: 1.0.0
-generated: "2026-08-17T01:48:41.589803327Z"
+generated: "2026-08-17T02:16:28.708731461Z"
