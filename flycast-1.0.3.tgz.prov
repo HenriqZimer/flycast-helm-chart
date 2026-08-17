@@ -1,0 +1,89 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+annotations:
+  artifacthub.io/changes: |
+    - kind: added
+      description: Chart releases are now signed (helm package --sign) - see artifacthub.io/signKey for the public key location and fingerprint, powers the "Signed" badge on ArtifactHub
+  artifacthub.io/changesHistory: |
+    - version: 1.0.2
+      changes:
+        - kind: added
+          description: values.schema.json - validates values.yaml against a JSON Schema, and is what powers the "Values schema" feature/badge on ArtifactHub (previously absent)
+    - version: 1.0.1
+      changes:
+        - kind: added
+          description: icon, previously missing entirely - pointed at linuxserver.io's own logo image for this app, which is why no image was ever showing on ArtifactHub
+    - version: 1.0.0
+      changes:
+        - kind: added
+          description: Initial release of the Flycast Helm chart
+        - kind: added
+          description: GPU passthrough for both Intel/AMD (VA-API via /dev/dri) and NVIDIA (via the NVIDIA Kubernetes device plugin, gpu.vendor=nvidia)
+        - kind: added
+          description: seccompUnconfined and a 2Gi default shmSize, both carried over from this chart's sibling pcsx2-helm-chart after PCSX2's JIT recompiler was found to crash with SIGBUS under Docker/Kubernetes' default seccomp/shm limits - not independently confirmed on Flycast, but the same base image/toolchain makes it a likely fix if you hit the same crash
+        - kind: added
+          description: streaming.enabled/streaming.brokerPort in values.yaml, kept only so the chart's shape matches its siblings. WARNING - no RomM broker mod exists for Flycast at all (github.com/LoneAngelFayt/flycast-romm-integration is an empty placeholder, not even a "dev" tag) - there is nothing to enable yet
+  artifacthub.io/license: MIT
+  artifacthub.io/links: |
+    - name: Helm Repository
+      url: https://henriqzimer.github.io/flycast-helm-chart/
+    - name: Chart Source
+      url: https://github.com/HenriqZimer/flycast-helm-chart
+    - name: Maintainer Website
+      url: https://henriqzimer.com.br
+    - name: GitHub Profile
+      url: https://github.com/HenriqZimer
+    - name: linuxserver.io Flycast Image
+      url: https://docs.linuxserver.io/images/docker-flycast/
+    - name: Documentation
+      url: https://github.com/HenriqZimer/flycast-helm-chart/blob/main/chart/README.md
+  artifacthub.io/signKey: |
+    fingerprint: C2E2E16693F2715BA0B23913BF94E5067859562F
+    url: https://henriqzimer.github.io/flycast-helm-chart/HenriqZimer-helm-charts-public.asc
+apiVersion: v2
+appVersion: latest
+description: A Helm chart for Flycast - the linuxserver.io Dreamcast/Naomi emulator
+  KasmVNC webtop image
+home: https://docs.linuxserver.io/images/docker-flycast/
+icon: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/flycast-logo.png
+keywords:
+- - flycast
+- - emulator
+- - dreamcast
+- - naomi
+- - retrogaming
+- - kasmvnc
+- - linuxserver
+maintainers:
+- - email: henrique.zimermann@outlook.com
+  name: HenriqZimer
+  url: https://henriqzimer.com.br
+name: flycast
+sources:
+- - https://github.com/linuxserver/docker-flycast
+- - https://github.com/HenriqZimer/flycast-helm-chart
+type: application
+version: 1.0.3
+
+...
+files:
+  flycast-1.0.3.tgz: sha256:ba7ee25c8438c60b4f4398f95fb810a5cb792531464a0b2004d42e84e0ffacfb
+
+-----BEGIN PGP SIGNATURE-----
+
+wsG5BAEBCgBtBYJqgvFFCRC/lOUGeFlWL0UUAAAAAAAcACBzYWx0QG5vdGF0aW9u
+cy5vcGVucGdwanMub3Jnyw6UOUz9Kp0YKYXFMiuYheS4deFV+42VKuMMWcRaJeEW
+IQTC4uFmk/JxW6CyORO/lOUGeFlWLwAAKNUP/0JcOdaMatdedhSC9gUoYXCn0nME
+xL+2SZ1dbdd4qSZf6JsAos20aVVLnXsO/QrxWCWRoXac6ZdRCB9bw7cRXPPiZnl5
+2d3n8NgWZg+x0BQrrWueeujLkDRgxHGyO8Iys6tAFsr1IeE3nOGnQ0Xlxa3pB22j
+psigsvRN2eCo1TgnKui/WanvLb6EBimlObS6FsOchhCxMqPfPDXQlIfh/rE8oaXK
+cIrssfHBYRutj1AlZtqhHlmPpXYO8mCUVgvdV71p8Y2U/+j4zZmyfD2hxZNWK9zu
+EupHh2GkUwnNyubPDaJ0Km0ZMC7m9wbOXU1eGbNtSBJ4ru1FV5cxtwjjx7RoNl9A
+UI6W6I4i3JiLBUnBRW7lKLZBoPlsONAQ2nIyWI6tYQe6hjMXRdd6b4lYFXP83LUv
+88qo4cDZiKKyHNXc/wTTDu/GP7tzhBE6VfakGB8sG+PRqJXUumofjmTPP7KJNRgp
+ZZQjAQMmBwSMQWbFxXsV6WTFFGiJRMiKF9Bov6J2UJo0sQ1y1XhlXA6Q1fGgP8YA
+gYdzhGMu49DvIFsG5hca0rj+m/7ptIMIhZC4CH/CYlxXxm6WeLN291BLiSS5HmsF
+e20ofLtwLYsoFn3ZTLhrDUxSKoHhWDtVbVpWtW91vz/rL2TCKLxTMWS2rdIXuFd3
+xfXHL9Imme0BV7Je
+-----END PGP SIGNATURE-----
