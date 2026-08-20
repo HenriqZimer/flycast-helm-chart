@@ -1,0 +1,97 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+annotations:
+  artifacthub.io/changes: |
+    - kind: fixed
+      description: README install commands now use a unique repo alias (<name>-helm-chart) instead of the bare chart name, and pin --version explicitly, matching what actually works
+  artifacthub.io/changesHistory: |
+    - version: 1.0.4
+      changes:
+        - kind: changed
+          description: README now shows the emulator's logo at the top (linuxserver.io's own image, same one used for the chart icon)
+    - version: 1.0.3
+      changes:
+        - kind: added
+          description: Chart releases are now signed (helm package --sign) - see artifacthub.io/signKey for the public key location and fingerprint, powers the "Signed" badge on ArtifactHub
+    - version: 1.0.2
+      changes:
+        - kind: added
+          description: values.schema.json - validates values.yaml against a JSON Schema, and is what powers the "Values schema" feature/badge on ArtifactHub (previously absent)
+    - version: 1.0.1
+      changes:
+        - kind: added
+          description: icon, previously missing entirely - pointed at linuxserver.io's own logo image for this app, which is why no image was ever showing on ArtifactHub
+    - version: 1.0.0
+      changes:
+        - kind: added
+          description: Initial release of the Flycast Helm chart
+        - kind: added
+          description: GPU passthrough for both Intel/AMD (VA-API via /dev/dri) and NVIDIA (via the NVIDIA Kubernetes device plugin, gpu.vendor=nvidia)
+        - kind: added
+          description: seccompUnconfined and a 2Gi default shmSize, both carried over from this chart's sibling pcsx2-helm-chart after PCSX2's JIT recompiler was found to crash with SIGBUS under Docker/Kubernetes' default seccomp/shm limits - not independently confirmed on Flycast, but the same base image/toolchain makes it a likely fix if you hit the same crash
+        - kind: added
+          description: streaming.enabled/streaming.brokerPort in values.yaml, kept only so the chart's shape matches its siblings. WARNING - no RomM broker mod exists for Flycast at all (github.com/LoneAngelFayt/flycast-romm-integration is an empty placeholder, not even a "dev" tag) - there is nothing to enable yet
+  artifacthub.io/license: MIT
+  artifacthub.io/links: |
+    - name: Helm Repository
+      url: https://henriqzimer.github.io/flycast-helm-chart/
+    - name: Chart Source
+      url: https://github.com/HenriqZimer/flycast-helm-chart
+    - name: Maintainer Website
+      url: https://henriqzimer.com.br
+    - name: GitHub Profile
+      url: https://github.com/HenriqZimer
+    - name: linuxserver.io Flycast Image
+      url: https://docs.linuxserver.io/images/docker-flycast/
+    - name: Documentation
+      url: https://github.com/HenriqZimer/flycast-helm-chart/blob/main/chart/README.md
+  artifacthub.io/signKey: |
+    fingerprint: C2E2E16693F2715BA0B23913BF94E5067859562F
+    url: https://henriqzimer.github.io/flycast-helm-chart/HenriqZimer-helm-charts-public.asc
+apiVersion: v2
+appVersion: latest
+description: A Helm chart for Flycast - the linuxserver.io Dreamcast/Naomi emulator
+  KasmVNC webtop image
+home: https://docs.linuxserver.io/images/docker-flycast/
+icon: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/flycast-logo.png
+keywords:
+- - flycast
+- - emulator
+- - dreamcast
+- - naomi
+- - retrogaming
+- - kasmvnc
+- - linuxserver
+maintainers:
+- - email: henrique.zimermann@outlook.com
+  name: HenriqZimer
+  url: https://henriqzimer.com.br
+name: flycast
+sources:
+- - https://github.com/linuxserver/docker-flycast
+- - https://github.com/HenriqZimer/flycast-helm-chart
+type: application
+version: 1.0.5
+
+...
+files:
+  flycast-1.0.5.tgz: sha256:9361b4a3b53a8ee3cc8075c79dce585e6b7ac7c3203198a7bd293d70daff4281
+
+-----BEGIN PGP SIGNATURE-----
+
+wsG5BAEBCgBtBYJqhoNtCRC/lOUGeFlWL0UUAAAAAAAcACBzYWx0QG5vdGF0aW9u
+cy5vcGVucGdwanMub3JnzmpQNsNV1KWKzzaZszkhq6f0gIECzwPpBz6NH2xC23EW
+IQTC4uFmk/JxW6CyORO/lOUGeFlWLwAAcasQAKz2XpufuLYyufPJK25wh6O3QjtG
++ey0Gmziu3L+16mjKeWX68p5qWdEeOXkqYFXPmJZXPRBi5gScYcFeqK88GzbARaT
+A77rpYgU8wi4bfz/DP80GKvxvZQO89gAyh5Kzzg6P3REtSN1fOdx3no7lYz1RtOw
+Gez/xszMfPbhHqAtRh3xsSpU4HOMnNOB4NP95yKx84KZuFJmQXhw79a6l9GOjeGT
+mzsoG5w+kC6KV28yw/v57RnJ/nuTvr9My35BW/Syvld2ZH9hIJUQ9mdQ/SYdNN7z
+4zyN5lJXIwJ5W+dUtCNxg2HySAM+yDE0ceY/hYasgfm0NuxugR5yZoTqngr4ZI+h
+nNdtjlGKvdrOrfJUKuBHxRN4wqf5c7NqXYfx7LMdBeZ6dv8dwOFJY9TJDcwUi0b/
+D2dlqom3T5RokHSP0l1CLshBHy8jfzTAdiHwm4pA27CNtQSD/Y8D+h5XrdlgCdBQ
+ODFFDdNwT7JLYLoIolR/yz6Ypaf9rM2OakH039c/Sh/43Pkl5iPVifFF+yRgmjoj
+vKkxK/9U1QsBn5SW8R10CPIlnkUDiYFS3KGkIIX7801SvqdhyoI4DIM+rjGnpiZn
+kKi7aFNevzbQ1wNprhUugdDw946AD98FY5v4jINuPpD+SPTu9EdNRye4cE73a2Kw
+bQhF4U5kWqq3sCOS
+-----END PGP SIGNATURE-----
