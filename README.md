@@ -28,14 +28,14 @@ your network:
 ### Add Helm Repository
 
 ```bash
-helm repo add flycast https://henriqzimer.github.io/flycast-helm-chart/
+helm repo add flycast-helm-chart https://henriqzimer.github.io/flycast-helm-chart/
 helm repo update
 ```
 
 ### Install Chart
 
 ```bash
-helm install flycast flycast/flycast
+helm install my-flycast flycast-helm-chart/flycast --version 1.0.5
 ```
 
 For detailed installation instructions and configuration options, see the [chart README](chart/README.md).

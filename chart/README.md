@@ -4,7 +4,7 @@
   <img src="https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/flycast-logo.png" alt="Flycast logo" width="140" />
 </p>
 
-[![Version: 1.0.4](https://img.shields.io/badge/Version-1.0.4-informational?style=flat-square)](https://github.com/HenriqZimer/flycast-helm-chart)
+[![Version: 1.0.5](https://img.shields.io/badge/Version-1.0.5-informational?style=flat-square)](https://github.com/HenriqZimer/flycast-helm-chart)
 [![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)](https://docs.linuxserver.io/images/docker-flycast/)
 
 A Helm chart for [Flycast](https://docs.linuxserver.io/images/docker-flycast/) - the linuxserver.io
@@ -14,11 +14,11 @@ Sega Dreamcast, Naomi, Naomi 2, and Atomiswave emulator, served as a full deskto
 
 ```bash
 # Add the Helm repository
-helm repo add flycast https://henriqzimer.github.io/flycast-helm-chart
+helm repo add flycast-helm-chart https://henriqzimer.github.io/flycast-helm-chart/
 helm repo update
 
 # Install Flycast
-helm install flycast flycast/flycast
+helm install my-flycast flycast-helm-chart/flycast --version 1.0.5
 ```
 
 ## Prerequisites
@@ -37,10 +37,10 @@ helm install flycast flycast/flycast
 ### From Helm Repository
 
 ```bash
-helm repo add flycast https://henriqzimer.github.io/flycast-helm-chart
+helm repo add flycast-helm-chart https://henriqzimer.github.io/flycast-helm-chart/
 helm repo update
 
-helm install flycast flycast/flycast
+helm install my-flycast flycast-helm-chart/flycast --version 1.0.5
 ```
 
 ### From Source
@@ -50,7 +50,7 @@ git clone https://github.com/HenriqZimer/flycast-helm-chart.git
 cd flycast-helm-chart
 
 helm package chart/
-helm install flycast ./flycast-1.0.4.tgz
+helm install my-flycast ./flycast-1.0.5.tgz
 ```
 
 ## Configuration
